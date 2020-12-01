@@ -6,6 +6,7 @@ import org.spongepowered.api.event.game.state.GameStartedServerEvent;
 import com.google.inject.Inject;
 import org.slf4j.Logger;
 
+// Have a look here: https://docs.spongepowered.org/stable/en/plugin/plugin-class.html
 @Plugin(id = "spongemvnex", name = "Sponge Maven Example", version = "1.0", description = "Maven Example")
 public class SpongeMvnEx {
 
