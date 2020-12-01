@@ -77,7 +77,7 @@ Breaks over, sorry. Next is the `@Inject` annotation and the
 `private Logger logger` line below it. Before I worked with the Sponge API,
 I hardly used annotations. Really, it was like maybe once a class? Now I use
 them all the time and life is better, I think. I again recommend you read the
-Sponge Docs on [Dependency Injection][spongdocs-injection], but I will provide
+Sponge Docs on [Dependency Injection][spongedocs-injection], but I will provide
 my own short explanation (for posterity). When you put `@Inject` about a member
 declartion, you're telling a library from Google (Sponge says its `Guice`, I
 believe them) to shove an object of that type into that varaible. I think Sponge
