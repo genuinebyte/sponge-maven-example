@@ -32,7 +32,7 @@
     <!-- These two values goes into the plugin.yml located
     in src/resources -->
     <author>Genuinebyte</author>
-    <mainClass>dev.genbyte.spawnerbuff.SpawnerBuff</mainClass>
+    <mainClass>dev.genbyte.spongemvnex.SpongeMvnEx</mainClass>
 
     <!--Lets Maven know which Java versions we're expecting. In this
     case, Java 8 -->
