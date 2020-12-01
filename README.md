@@ -31,7 +31,7 @@ gradle). Have a look at the heavily commented [pom.xml][pomxml].
 [pomxml]: pom.xml
 
 There are two ways to build the plugin. The first is with your IDEs integration
-with maven, if it has that. If not, you can run `mvn install` at the command
+with maven, if it has that. If not, you can run `mvn package` at the command
 line. Both of these methods should put a `.jar` in the `target` directory.
 
 ### The Main Class
