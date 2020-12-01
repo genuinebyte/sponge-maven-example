@@ -34,6 +34,21 @@ There are two ways to build the plugin. The first is with your IDEs integration
 with maven, if it has that. If not, you can run `mvn package` at the command
 line. Both of these methods should put a `.jar` in the `target` directory.
 
+### A quick note on CI
+Before we move on to the meat of this document, The Main Class, I'd like to
+mention CI. CI, in case you don't know, stands for Continuous Integration. Its
+job is to try and build your code when you perform a certain action, like
+pushing to the repostory. If the code fails to build, it notifies you in some
+way to let you know.  I think [this][ci-article] is a good article on the
+subject.
+
+[ci-article]: https://codeship.com/continuous-integration-essentials
+
+The specific CI used in this repository is the one offered by GitHub actions.
+The setup of a CI for Java with Maven is detailed [here][github-ci].
+
+[github-ci]: https://docs.github.com/en/free-pro-team@latest/actions/guides/building-and-testing-java-with-maven
+
 ### The Main Class
 Here i'll try to explain the main plugin class as shwon below. The
 [Sponge Docs][spongedocs-mainclass] do a better job, so maybe read
