@@ -6,19 +6,28 @@ as a guide to start your journey.
 Knowing how a project is arranged can save so much time and confusion, so here
 is how this one is arranged:
 
-#### `src/main/java` 
+##### `src/main/java` 
 The plugins soruce goes here. The main file for this project
 is at `dev.genbyte.spongemvnex.SpongeMvnEx` so the full path to that file, from
 the project root, would be
 `src/main/java/dev/genbyte/spongemvnex/SpongeMvnEx.java`.
 
-#### `src/resources`
+##### `src/resources`
 The plugins resources go here. Stuff like the plugin.yml and a config.yml if you
 have one.
+
+If you take a look at the [plugin.yml][pluginyml], you'll see that all the keys
+currently in that file have a value of `${keyName}`. That's because those are
+variables that Maven will fill in when building the plugin. Look at the build
+section of the pom.xml file for more information.
+
+[pluginyml]: src/resources/plugin.yml
 
 ### Building
 Building is done using maven because frankly I just prefer it (and I don't know
 gradle). Have a look at the heavily commented [pom.xml][pomxml].
+
+[pomxml]: pom.xml
 
 There are two ways to build the plugin. The first is with your IDEs integration
 with maven, if it has that. If not, you can run `mvn install` at the command
