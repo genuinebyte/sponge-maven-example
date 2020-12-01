@@ -1,0 +1,100 @@
+<!-- based on https://github.com/sgrayme/SpigotPlugin/blob/master/pom.xml -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <!-- Convention is that this is your website (or email address) with the parts in
+  reverse order and the name tacked on the back, All lowercase -->
+  <groupId>dev.genbyte.spongemvnex</groupId>
+  <!-- Name of the resulting pacakge -->
+  <artifactId>SpongeMvnEx</artifactId>
+  <!-- What kind of packaging to use. I've never seen anything other than jar -->
+  <packaging>jar</packaging>
+  <!-- Version -->
+  <version>1.0.0</version>
+
+  <!-- Name of the plugin -->
+  <name>SpongeMvnEx</name>
+  <!-- A short description of what its meant to do -->
+  <description>Allow minecarts to be loaded/unloaded with spawners</description>
+  <!-- URL. Could link to a project page or the code repo -->
+  <url>https://genbyte.dev</url><!-- TODO: add URL -->
+
+  <!-- Who wrote the code? -->
+  <developers>
+    <developer>
+      <name>Genuinebyte</name>
+      <url>https://genbyte.dev</url>
+    </developer>
+  </developers>
+
+  <properties>
+    <!-- These two values goes into the plugin.yml located
+    in src/resources -->
+    <author>Genuinebyte</author>
+    <mainClass>dev.genbyte.spawnerbuff.SpawnerBuff</mainClass>
+
+    <!--Lets Maven know which Java versions we're expecting. In this
+    case, Java 8 -->
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
+
+  <!-- Where should Maven look for dependecies? -->
+  <repositories>
+    <!-- Sponge Maven repository -->
+    <repository>
+      <id>sponge-repo</id>
+      <url>https://repo.spongepowered.org/maven</url>
+    </repository>
+  </repositories>
+
+  <!-- What are the dependecies? -->
+  <dependencies>
+    <!--Spigot API -->
+    <dependency>
+      <groupId>org.spongepowered</groupId>
+      <artifactId>spongeapi</artifactId>
+      <version>7.2.0</version>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+
+
+  <!-- A plugin isn't a regular Java program, there is no main.java, so
+  it requries special build directions -->
+  <build>
+    <!-- Where do we find the source code? -->
+    <sourceDirectory>src/main/java</sourceDirectory>
+    <!-- What should Maven do by default? In this case, cleanup from the last
+    compilation and then do it again! -->
+    <defaultGoal>clean install</defaultGoal>
+
+    <!-- Extra stuff to shove in the jar file -->
+    <resources>
+      <!-- Handles the plugin.yml as a special case -->
+      <resource>
+        <!-- Where are the resources?-->
+        <directory>src/main/resources</directory>
+        <!-- This tells maven to fill in the ${varaibles} in our plugin.yml
+        with the stuff from this here pom.xml -->
+        <filtering>true</filtering>
+        <!-- Include plugin.yml! -->
+        <includes>
+          <include>plugin.yml</include>
+        </includes>
+      </resource>
+
+      <!-- Everything else -->
+      <resource>
+        <directory>src/main/resources</directory>
+        <!-- Don't replace varaibles for other files -->
+        <filtering>false</filtering>
+        <!-- Don't do plugin.yml again, we did it above -->
+        <excludes>
+          <exclude>plugin.yml</exclude>
+        </excludes>
+      </resource>
+    </resources>
+  </build>
+</project>
