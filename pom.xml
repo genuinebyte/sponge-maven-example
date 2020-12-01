@@ -16,7 +16,7 @@
   <!-- Name of the plugin -->
   <name>SpongeMvnEx</name>
   <!-- A short description of what its meant to do -->
-  <description>Allow minecarts to be loaded/unloaded with spawners</description>
+  <description>An example of using Maven with the Sponge API</description>
   <!-- URL. Could link to a project page or the code repo -->
   <url>https://genbyte.dev</url><!-- TODO: add URL -->
 
